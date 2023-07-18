@@ -40,9 +40,9 @@
                     <td>{{ $proyectos_ofertado->duracion }}</td>
                     <td>{{ $proyectos_ofertado->estimulo }}</td>
                     <td>{{ $proyectos_ofertado->lug_part }}</td>
-                    <td>{{ $proyectos_ofertado->coordinador->persona->nombre }} {{ $proyectos_ofertado->coordinador->persona->ape_pat }} {{ $proyectos_ofertado->coordinador->persona->ape_mat }}</td>
+                   {{--}} <td>{{ $proyectos_ofertado->coordinador->persona->nombre }} {{ $proyectos_ofertado->coordinador->persona->ape_pat }} {{ $proyectos_ofertado->coordinador->persona->ape_mat }}</td> {{--}}
                     <td>{{ $proyectos_ofertado->aprobacionDG }}</td>
-                    <td>{{ $proyectos_ofertado->areas->nombre_area }}</td>
+                    {{--}}<td>{{ $proyectos_ofertado->areas->nombre_area }}</td>{{--}}
                     <td>{{ $proyectos_ofertado->denominacion }}</td>
                     <td>{{ $proyectos_ofertado->justificacion }}</td>
                     <td>{{ $proyectos_ofertado->objetivos }}</td>

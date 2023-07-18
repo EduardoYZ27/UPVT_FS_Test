@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\CoordinadorController;
 use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\Proyectos_ofertadosController;
+use App\Http\Controllers\MenuController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,5 @@ Route::resource('/area', AreaController::class);
 Route::resource('/coordinador', CoordinadorController::class);
 
 Route::resource('/proyectos_ofertados', Proyectos_ofertadosController::class);
+
+Route::resource('/menu', MenuController::class);
