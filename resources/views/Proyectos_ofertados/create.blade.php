@@ -61,12 +61,12 @@
             </div>
 
             <div class="mb-3 row">
-                <label for="lug_part" class="col-sm-2 col-form-label">Lugar de participación</label>
+                <label for="tipo_lug_part" class="col-sm-2 col-form-label">Lugar de participación</label>
                 <div class="col-sm-5">
-                    <select name="lug_part" id="lug_part" class="form-select" required>
+                    <select name="tipo_lug_part" id="tipo_lug_part" class="form-select" required>
                         <option value="" selected>Seleccione una opción</option>
-                        <option value="comunitario" {{ old('lug_part') == 'comunitario' ? 'selected' : '' }}>Comunitario</option>
-                        <option value="no_comunitario" {{ old('lug_part') == 'no_comunitario' ? 'selected' : '' }}>No comunitario</option>
+                        <option value="comunitario" {{ old('tipo_lug_part') == 'comunitario' ? 'selected' : '' }}>Comunitario</option>
+                        <option value="no_comunitario" {{ old('tipo_lug_part') == 'no_comunitario' ? 'selected' : '' }}>No comunitario</option>
                     </select>
                 </div>
             </div>
@@ -166,15 +166,33 @@
                 </div>
             </div>
 
+            <div class="mb-3 row">
+                <label for="id_lugar_prestacion" class="col-sm-2 col-form-label">Lugar de prestacion</label>
+                <div class="col-sm-5">
+                    <input type="number" class="form-control" name="id_lugar_prestacion" id="id_lugar_prestacion" value="{{ old('id_lugar_prestacion') }}" required>
+                </div>
+            </div>
 
+            <div class="mb-3 row">
+                <label for="estatus" class="col-sm-2 col-form-label">Estatus</label>
+                <div class="col-sm-5">
+                    <select name="estatus" id="estatus" class="form-select" required>
+                        <option value="" selected>Seleccione una opción</option>
+                        <option value="activo" {{ old('estatus') == 'activo' ? 'selected' : '' }}>Activo</option>
+                        <option value="inactivo" {{ old('estatus') == 'inactivo' ? 'selected' : '' }}>Inactivo</option>
+                    </select>
+                </div>
+            </div>
 
             <div class="mb-3 row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-5">
-                    <a href="{{url('proyectos_ofertados')}}" class="btn btn-secondary">Regresar</a>
                     <button type="submit" class="btn btn-success">Guardar</button>
+                    <a href="{{url('menu')}}" class="btn btn-success">Cancelar</a>
                 </div>
             </div>
+
+
 
         </form>
     </div>

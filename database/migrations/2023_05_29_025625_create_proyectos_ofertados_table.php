@@ -17,7 +17,7 @@ return new class extends Migration
             $table->enum('perfil', ['unidiciplinario', 'multidiciplinario']);
             $table->integer('duracion');
             $table->enum('estimulo', ['gratis', 'recompensado']);
-            $table->enum('lug_part', ['comunitario', 'no comunitario']);
+            $table->enum('tipo_lug_part', ['comunitario', 'no comunitario']);
             $table->unsignedBigInteger('coordinador');
             $table->integer('aprobacionDG');
             $table->unsignedBigInteger('area');
@@ -29,10 +29,13 @@ return new class extends Migration
             $table->string('evaluacion', 100);
             $table->binary('convenioPDF');
             $table->enum('tipo_duracion', ['continuo', 'discontinuo']);
+            $table->unsignedBigInteger('id_lugar_prestacion');
+            $table->enum('estatus', ['activo', 'inactivo']);
             $table->timestamps();
 
             $table->foreign('coordinador')->references('id')->on('coordinador');
             $table->foreign('area')->references('id')->on('areas');
+            $table->foreign('lugar_prestacion')->references('id')->on('id_lugar_prestacion');
         });
     }
 

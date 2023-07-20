@@ -26,8 +26,9 @@
                 </div>
             </div>
 
-            <a href="{{url('area')}}" class="btn btn-secondary">Regresar</a>
             <button type="submit" class="btn btn-success">Guardar</button>
+            <a href="{{url('menu')}}" class="btn btn-success">Cancelar</a>
+
             </form>
 
         </div>

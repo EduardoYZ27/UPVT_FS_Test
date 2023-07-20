@@ -43,7 +43,7 @@ class Proyectos_ofertadosController extends Controller
             'perfil' => 'required',
             'duracion' => 'required|numeric',
             'estimulo' => 'required',
-            'lug_part' => 'required',
+            'tipo_lug_part' => 'required',
             'coordinador' => 'required',
             'aprobacionDG' => 'required|numeric',
             'area' => 'required',
@@ -55,6 +55,8 @@ class Proyectos_ofertadosController extends Controller
             'evaluacion' => 'required',
             'convenio_pdf' => 'required|file|mimes:pdf',
             'tipo_duracion' => 'required',
+            'id_lugar_prestacion'=> 'required',
+            'estatus'=> 'required'
         ]);
 
         // Guardar el archivo PDF en una ubicación específica
@@ -67,9 +69,9 @@ class Proyectos_ofertadosController extends Controller
         $proyectos_ofertados->perfil = $request->input ('perfil');
         $proyectos_ofertados->duracion = $request->input ('duracion');
         $proyectos_ofertados->estimulo = $request->input ('estimulo');
-        $proyectos_ofertados->lug_part = $request->input ('lug_part');
+        $proyectos_ofertados->tipo_lug_part = $request->input ('lug_part');
         $coordinadorId = $request->input('coordinador_id');
-        $proyectos_ofertados->coordinador()->associate($coordinadorId);
+        $proyectos_ofertados->coordinadors()->associate($coordinadorId);
         $proyectos_ofertados->aprobacionDG = $request->input ('aprobacionDG');
         $proyectos_ofertados->area = $request->input ('area');
         $proyectos_ofertados->denominacion = $request->input ('denominacion');
@@ -80,7 +82,8 @@ class Proyectos_ofertadosController extends Controller
         $proyectos_ofertados->evaluacion = $request->input ('evaluacion');
         $proyectos_ofertados->convenioPDF = $pdfPath;
         $proyectos_ofertados->tipo_duracion = $request->input('tipo_duracion');
-
+        $proyectos_ofertados->id_lugar_prestacion = $request->input ('id_lugar_prestacion');
+        $proyectos_ofertados->estatus = $request->input ('estatus');
         $proyectos_ofertados->save();
 
         return view("proyectos_ofertados.message",['msg'=>"Proyecto Guardado"]);

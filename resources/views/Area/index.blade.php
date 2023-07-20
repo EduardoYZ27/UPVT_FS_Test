@@ -7,8 +7,6 @@
         <div class="container py-4">
             <h2>Areas</h2>
 
-            <a href="{{url('area/create')}}" class="btn btn-success btn-sm">Nueva area</a>
-
             <table class="table table-hover">
                 <thead>
                     <tr>
